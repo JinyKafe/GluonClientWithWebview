@@ -42,3 +42,4 @@ This is a list of all the features that were selected when creating the sample:
  - Attach display
  - Attach lifecycle
  - Attach statusbar
+ - Attach storage

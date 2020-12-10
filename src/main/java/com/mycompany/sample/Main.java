@@ -8,15 +8,12 @@ import com.gluonhq.charm.glisten.control.FloatingActionButton;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import com.gluonhq.charm.glisten.visual.Swatch;
-import javafx.application.Application;
 import javafx.geometry.Dimension2D;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
+import javafx.scene.web.WebView;
 
 public class Main extends MobileApplication {
 
@@ -26,13 +23,12 @@ public class Main extends MobileApplication {
             FloatingActionButton fab = new FloatingActionButton(MaterialDesignIcon.SEARCH.text,
                     e -> System.out.println("Search"));
 
-            ImageView imageView = new ImageView(new Image(Main.class.getResourceAsStream("openduke.png")));
-            imageView.setFitHeight(200);
-            imageView.setPreserveRatio(true);
+            WebView webView = new WebView();
+            webView.getEngine().load("https://gluonhq.com");
 
             Label label = new Label("Hello, Gluon Mobile!");
 
-            VBox root = new VBox(20, imageView, label);
+            VBox root = new VBox(20, webView, label);
             root.setAlignment(Pos.CENTER);
 
             View view = new View(root) {

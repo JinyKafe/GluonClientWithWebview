@@ -70,6 +70,11 @@
         </dependency>
         <dependency>
             <groupId>com.gluonhq.attach</groupId>
+            <artifactId>storage</artifactId>
+            <version>${attach.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gluonhq.attach</groupId>
             <artifactId>util</artifactId>
             <version>${attach.version}</version>
         </dependency>
@@ -101,6 +106,7 @@
                         <list>display</list>
                         <list>lifecycle</list>
                         <list>statusbar</list>
+                        <list>storage</list>
                     </attachList>
                 </configuration>
             </plugin>
@@ -127,6 +133,13 @@
                 <dependency>
                     <groupId>com.gluonhq.attach</groupId>
                     <artifactId>lifecycle</artifactId>
+                    <version>${attach.version}</version>
+                    <classifier>desktop</classifier>
+                    <scope>runtime</scope>
+                </dependency>
+                <dependency>
+                    <groupId>com.gluonhq.attach</groupId>
+                    <artifactId>storage</artifactId>
                     <version>${attach.version}</version>
                     <classifier>desktop</classifier>
                     <scope>runtime</scope>
